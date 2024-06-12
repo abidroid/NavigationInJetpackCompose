@@ -17,6 +17,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.example.navigationinjetpackcompose.ui.theme.NavigationInJetpackComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -24,7 +27,25 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            MainScreen()
+            MyNavigations()
+        }
+    }
+}
+
+@Composable
+fun MyNavigations(){
+    val navController = rememberNavController()
+    NavHost(navController = navController, startDestination = "MainScreen"){
+        composable(route = "MainScreen"){
+            MainScreen(navController)
+        }
+
+        composable(route = "SecondScreen"){
+            SecondScreen(navController)
+        }
+
+        composable(route = "ThirdScreen"){
+            ThirdScreen(navController)
         }
     }
 }

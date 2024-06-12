@@ -15,10 +15,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ThirdScreen() {
+fun ThirdScreen(navController: NavController) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -42,8 +43,8 @@ fun ThirdScreen() {
 
 }
 
-@Preview
-@Composable
-fun ThirdScreenPreview() {
-    ThirdScreen()
-}
+//@Preview
+//@Composable
+//fun ThirdScreenPreview() {
+//    ThirdScreen()
+//}
