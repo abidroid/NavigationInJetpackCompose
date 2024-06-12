@@ -50,7 +50,7 @@ fun MainScreen(navController: NavController) {
                     //modifier = modifier
                 )
                 Button(onClick = {
-
+                    navController.navigate("SecondScreen")
                 }) {
                     Text("Go to Second Screen")
                 }
