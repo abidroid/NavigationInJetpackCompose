@@ -55,7 +55,7 @@ fun SecondScreen(navController: NavController) {
                 Text(text = "Second Screen", color = Color.Black)
                 Button(onClick = {
                     navController.navigate("ThirdScreen"){
-                        popUpTo("SecondScreen"){
+                        popUpTo("SecondScreen"){ // Remove all screens unto this screen (inclusive)
                             inclusive = true
                         }
                     }
