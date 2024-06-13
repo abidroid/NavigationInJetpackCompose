@@ -11,10 +11,13 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -25,6 +28,10 @@ import androidx.navigation.NavController
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(navController: NavController) {
+
+    val txtName = remember {
+        mutableStateOf("")
+    }
     Scaffold(
 
         topBar = {
@@ -59,6 +66,18 @@ fun MainScreen(navController: NavController) {
                     navController.navigate("ThirdScreen")
                 }) {
                     Text("Go to Third Screen")
+                }
+
+                Spacer(modifier = Modifier.height(16.dp))
+
+                TextField(value = txtName.value, onValueChange = {
+                    txtName.value = it
+                } )
+                Spacer(modifier = Modifier.height(16.dp))
+                Button(onClick = {
+
+                }){
+                    Text("Go to Fourth Screen")
                 }
             }
         }
