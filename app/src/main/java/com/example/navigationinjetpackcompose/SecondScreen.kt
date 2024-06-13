@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -52,6 +53,15 @@ fun SecondScreen(navController: NavController) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(text = "Second Screen", color = Color.Black)
+                Button(onClick = {
+                    navController.navigate("ThirdScreen"){
+                        popUpTo("SecondScreen"){
+                            inclusive = true
+                        }
+                    }
+                }) {
+                    Text("Go to Third Screen")
+                }
             }
         }
     )
