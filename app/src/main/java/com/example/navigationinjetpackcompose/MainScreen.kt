@@ -70,12 +70,12 @@ fun MainScreen(navController: NavController) {
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                TextField(value = txtName.value, onValueChange = {
-                    txtName.value = it
+                TextField(value = txtName.value, onValueChange = { text: String ->
+                    txtName.value = text
                 } )
                 Spacer(modifier = Modifier.height(16.dp))
                 Button(onClick = {
-
+                        navController.navigate("FourthScreen/${txtName.value}")
                 }){
                     Text("Go to Fourth Screen")
                 }
