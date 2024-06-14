@@ -79,6 +79,8 @@ fun MainScreen(navController: NavController) {
                 Spacer(modifier = Modifier.height(16.dp))
                 Button(onClick = {
 
+                    //Note: We can also use try catch for illegal argument exception
+                    //and show error message
                     if (txtName.value.isEmpty()) {
                         Toast.makeText(myContext, "Please enter your name", Toast.LENGTH_SHORT).show()
                     } else {
